@@ -12,17 +12,20 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
+    <div class="container h-md-100 background-image" role="img" aria-label="A girl in green trousers and fancy top">
+        <div class="row mt-md-5 flex-md-row-reverse px-5 px-md-0">
+            <div class="col-12 col-md-6 image-border text-container pt-3 pt-md-5">
+                <h1 class="logo-font text-black pt-md-5 pl-2 px-md-5">
                     New collections are here
                 </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-btn btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
+                <h2 class="invitation px-2 px-md-5 pt-2 pt-md-5">Browse our range of products or book a consultation today</h2>
+                <div class="px-2 px-md-5 pt-3 pt-md-5 pb-4">
+                    <a href="{% url 'products' %}" class="btn btn-green d-block d-lg-inline">Shop Now</a>
+                    <a href="{% url 'products' %}" class="btn btn-green d-block d-lg-inline mt-3 mt-md-3 mt-lg-0 ml-lg-2">Servises</a>
                 </div>
+            </div>
+            <div class="col-12 col-md-6 home-page-image-container d-none d-md-flex" role="img" aria-label="A girl in green trousers and fancy top">
+                
             </div>
         </div>
     </div>

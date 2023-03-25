@@ -72,10 +72,11 @@
                             aria-label="product-detail"></a>
                     </div>
                     <div class="row card-body py-0 mb-4">
-                        <!-- <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                    
+                                    <!-- <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                                     {% if product.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -87,10 +88,11 @@
                                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                     {% else %}
                                         <small class="text-muted">No Rating</small>
-                                    {% endif %}
+                                    {% endif %} -->
+                                    <p class="mt-3">{{ product.description }}</p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         {% if request.user.is_superuser %}
                         <small class="col text-right pr-0 edit-delete-btns">
                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -103,15 +105,20 @@
             {% endfor %}
         </div>
     </div>
-<div class="btt-button shadow-sm rounded-0 border-gold">
-    <div class="btt-link d-flex h-100">
-        <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
+    <div class="btt-button shadow-sm rounded-0 border-gold">
+        <div class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+</script>
 <script>
     $('#sort-selector').change(function () {
         var selector = $(this);

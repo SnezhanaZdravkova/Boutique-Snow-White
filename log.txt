@@ -71,20 +71,20 @@
        Building wheels for collected packages: django-allauth, psycopg2
          Building wheel for django-allauth (setup.py): started
          Building wheel for django-allauth (setup.py): finished with status 'done'
-         Created wheel for django-allauth: filename=django_allauth-0.41.0-py3-none-any.whl size=855147 sha256=78f8f8bb92a218e66406d738478b4d9c5c287479fd6db65abcc571680dc063f2
-         Stored in directory: /tmp/pip-ephem-wheel-cache-e0z9fih1/wheels/0f/fd/a9/9d12d21ea825095243271321bcac740cc47511436353e2dc2b
+         Created wheel for django-allauth: filename=django_allauth-0.41.0-py3-none-any.whl size=855147 sha256=d0db4ddbc4a3c3b47d5ee178950b2d84960097262a432a28f7dd09ebebf53fd0
+         Stored in directory: /tmp/pip-ephem-wheel-cache-9fcnrf_t/wheels/0f/fd/a9/9d12d21ea825095243271321bcac740cc47511436353e2dc2b
          Building wheel for psycopg2 (setup.py): started
          Building wheel for psycopg2 (setup.py): finished with status 'done'
-         Created wheel for psycopg2: filename=psycopg2-2.9.6-cp311-cp311-linux_x86_64.whl size=159950 sha256=500967496ac9e288c9051b3f562aa64351d372c0793ef6d2dd6422f15809a156
-         Stored in directory: /tmp/pip-ephem-wheel-cache-e0z9fih1/wheels/a2/c5/3d/b8fd44767c125a321b8d6d7fbcce0181d2f2d1e34967c81365
+         Created wheel for psycopg2: filename=psycopg2-2.9.6-cp311-cp311-linux_x86_64.whl size=159950 sha256=2bec3768e9558ca1a6b6b1848ad2b3abf14b1ae37f21269b769f1ab6f55e2f6a
+         Stored in directory: /tmp/pip-ephem-wheel-cache-9fcnrf_t/wheels/a2/c5/3d/b8fd44767c125a321b8d6d7fbcce0181d2f2d1e34967c81365
        Successfully built django-allauth psycopg2
        Installing collected packages: pytz, django-countries, dj-database-url, urllib3, sqlparse, six, psycopg2, Pillow, oauthlib, jmespath, idna, gunicorn, django-crispy-forms, defusedxml, charset-normalizer, certifi, asgiref, requests, python3-openid, python-dateutil, Django, stripe, requests-oauthlib, django-storages, botocore, s3transfer, django-allauth, boto3
        Successfully installed Django-3.2 Pillow-9.4.0 asgiref-3.6.0 boto3-1.26.109 botocore-1.29.109 certifi-2022.12.7 charset-normalizer-3.1.0 defusedxml-0.7.1 dj-database-url-0.5.0 django-allauth-0.41.0 django-countries-7.2.1 django-crispy-forms-1.14.0 django-storages-1.13.2 gunicorn-20.1.0 idna-3.4 jmespath-1.0.1 oauthlib-3.2.2 psycopg2-2.9.6 python-dateutil-2.8.2 python3-openid-3.2.0 pytz-2022.7.1 requests-2.28.2 requests-oauthlib-1.3.1 s3transfer-0.6.0 six-1.16.0 sqlparse-0.4.3 stripe-5.4.0 urllib3-1.26.15
 -----> $ python manage.py collectstatic --noinput
        Traceback (most recent call last):
-         File "/tmp/build_433feecd/manage.py", line 22, in <module>
+         File "/tmp/build_9d872a67/manage.py", line 22, in <module>
            main()
-         File "/tmp/build_433feecd/manage.py", line 18, in main
+         File "/tmp/build_9d872a67/manage.py", line 18, in main
            execute_from_command_line(sys.argv)
          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
            utility.execute()

@@ -1,7 +1,8 @@
 {% load static %}
 <footer>
-    <div class="row">
+    <div class="w-2/3 pl-4 pr-6">
         <!-- Social media icons -->
+        <h3 class="mb-5 font-semibold text-black">Follow Us On:</h3>
         <a href="" target="_blank" rel="noopener" aria-label="Linledin - Opens in a new tab">
             <img src="{% static 'icons/linkedin-square-color-icon.svg' %}" alt="LinkedIn Icon" class="social-icon">
         </a>
@@ -21,8 +22,9 @@
             <img src="{% static 'icons/facebook-app-icon.svg' %}" alt="Facebook Icon" class="social-icon">
         </a>
     </div>
-    <div class="col-12 col-md-4 px-4 px-md-0 py-4">
-        <ul class="nav flex-column divider px-4">
+    <div class="w-1/3">
+        <h3 class="mb-3 mt-3 pl-4 font-semibold text-black">Menu</h3>
+        <ul class="space-y-2">
             <li class="nav-item">
                 <a href="{% url 'products' %}" class="nav-link text-uppercase">Products</a>
             </li>

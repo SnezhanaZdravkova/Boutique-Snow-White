@@ -29,4 +29,4 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'boutique_ado.views.handler404'
+handler404 = 'boutique_snow_white.views.handler404'

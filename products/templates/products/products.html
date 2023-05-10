@@ -76,7 +76,7 @@
                             <div class="row">
                                 <div class="col">
                                     
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                     {% if product.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -99,6 +99,8 @@
                             <a href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                         {% endif %}
+                        <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-0 hover:bg-ti
+                        eal-700">Contact Seller</a>
                     </div>
                 </div>
             </div>

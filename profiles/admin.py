@@ -1,3 +1,14 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import UserProfile
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        'pk',
+        'user',
+        'default_phone_number',
+    )
+
+
+admin.site.register(UserProfile, ProfileAdmin)

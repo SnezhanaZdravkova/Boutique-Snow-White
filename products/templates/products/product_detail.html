@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col">
+   
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -107,21 +110,7 @@
                     </div>
                 </form>                
             </div>
-            <a href="#" class="inline-block mt-6 py-6 mb-6 text-lg font-semibold text-black btn btn-outline-black
-             rounded-0">Contact Seller</a>
         </div>
-    </div>
-    <div class="grid grid-cols-3 gap-3">
-        {% for recipe in related_recipes %}
-        <div>
-            <a href="{% url 'product:detail' product.id %}">
-                <div></div>
-                <div class="p-6 bg-white">
-                    <h2 class="text-2xl">{{ recipe.name }}</h2>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

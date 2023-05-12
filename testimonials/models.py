@@ -34,6 +34,10 @@ class Testimonial(models.Model):
     def __str__(self):
         return f"Testimonial: {self.service} by {self.name.username}"
 
+    def get_absolute_url(self):
+        """Get url after user adds/edits testimonial"""
+        return reverse('testimonials')
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(instance, created, **kwargs):

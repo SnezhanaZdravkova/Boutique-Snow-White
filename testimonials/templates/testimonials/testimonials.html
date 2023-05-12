@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center pt-4">Testimonials</h1>
+        </div>
+        <div class="col-12">
+            <div class="pt-3 text-center">
+                <a href="" class="btn btn-sm gold-button py-2" aria-label="add-testimonial">
+                    Add Testimonial
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container mb-4">
+        <div class="card-columns">
+            {% for testimonial in testimonial_list  %}
+            <div class="card my-3 testimonial-bg border-0">
+                <div class="text-center quote">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="card-body">
+                    <h4 class="text-center"><strong>{{ testimonial.service.name }}</strong></h4>
+                    {{ testimonial.body }}
+                </div>
+                <div class="card-body">
+                    <strong>{{ testimonial.name }}</strong>
+                    <br>
+                    {{ testimonial.created_on }}
+                    {% if user.is_authenticated and testimonial.name == user or user.is_superuser %}
+                    <span class="align-self-end">
+                        <small class="edit-delete-btns ">
+                            <a href="">Edit</a> |
+                            <a href="">Delete</a>
+                        </small>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="btt-button shadow-sm rounded-0 border-gold">
+    <div class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
+    </div>
+</div>
+{% endblock %}

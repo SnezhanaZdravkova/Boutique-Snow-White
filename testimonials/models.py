@@ -14,6 +14,10 @@ class Service(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        """Get url after superuser adds/edits service"""
+        return reverse('services')
+
 
 class Testimonial(models.Model):
     """ Testimonial Model """
@@ -30,8 +34,9 @@ class Testimonial(models.Model):
     def __str__(self):
         return f"Testimonial: {self.service} by {self.name.username}"
 
+
 @receiver(post_save, sender=User)
 def create_user_profile(instance, created, **kwargs):
     """Create or update the user profile"""
     if created:
-        Profile.objects.create(user=instance)
+        Testimonial.objects.create(user=instance)

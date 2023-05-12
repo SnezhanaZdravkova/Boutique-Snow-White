@@ -18,7 +18,7 @@
         {% if user.is_superuser %}
         <div class="col-12">
             <div class="pt-3 text-center">
-                <a href="" class="btn btn-sm gold-button py-2" aria-label="add-new-service">
+                <a href="{% url 'add_services' %}" class="btn btn-outline-dark py-2" aria-label="add-new-service">
                     Add New Service
                 </a>
             </div>
@@ -26,7 +26,7 @@
         {% endif %}
     </div>
     <br>
-    {% for service in services  %}
+    {% for service in service_list%}
     <div class="row alt-colour">
         <div class="container services-inner">
             <div class="col-12 pl-md-4">
@@ -51,12 +51,12 @@
                                 </div>
                                 {% if request.user.is_superuser %}
                                 <small class="edit-delete-btns align-bottom">
-                                    <a href="">Edit</a> |
-                                    <a href="">Delete</a>
+                                    <a href="" class="btn btn-outline-dark rounded-0">Edit</a> |
+                                    <a href="" class="btn btn-outline-dark rounded-0">Delete</a>
                                 </small>
                                 {% else %}
                                 <div class="align-bottom">
-                                    <a href="{% url 'contact' %}" class="btn btn-sm gold-button py-2">Enquire Now</a>
+                                    <a href="{% url 'contact' %}" class="btn btn-outline-dark rounded-0">Enquire Now</a>
                                 </div>
                                 {% endif %}
                             </div>

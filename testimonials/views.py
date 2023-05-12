@@ -18,6 +18,34 @@ class Services(ListView):
         return context
 
 
+class AddService(
+        LoginRequiredMixin,
+        SuccessMessageMixin, CreateView):
+
+    """This view is used to allow site owner to add a new service"""
+
+    model = Service
+    form_class = ServiceForm
+    template_name = 'testimonials/add_services.html'
+    success_message = "%(calculated_field)s was created successfully"
+
+    def get_success_message(self, cleaned_data):
+        """
+        This function overrides the get_success_message() method to add
+        the service name into the success message.
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.name,
+        )
+
+    def test_func(self):
+        """ only superuser can add serivces """
+
+        if self.request.user.is_superuser:
+            return True
+
+
 class Testimonials(ListView):
     """ This view is used to display all testimonials """
     model = Testimonial
@@ -30,11 +58,12 @@ class Testimonials(ListView):
 
 
 class AddTestimonial(
-        LoginRequiredMixin, UserPassesTestMixin,
+        LoginRequiredMixin,
         SuccessMessageMixin, CreateView):
 
     """This view is used to allow a user to add a testimonial"""
-    form = TestimonialForm
+    model = Testimonial
+    form_class = TestimonialForm
     template_name = 'testimonials/add_testimonial.html'
     success_message = "Your testimonial was added successfully"
 

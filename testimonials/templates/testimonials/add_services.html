@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center pt-4">Add Service</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center mb-3">
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
+                {% endfor %}
+                <button type="submit" class="btn btn-outline-dark rounded-0">Add Service</button>
+                <a class="btn btn-outline-dark rounded-0 m-2" href="{%  url 'services' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, UpdateView, ListView, CreateView
+from django.views.generic import DeleteView, UpdateView, ListView, CreateView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Service, Testimonial
 from .forms import ServiceForm, TestimonialForm
+from django.urls import reverse_lazy
 
 
 class Services(ListView):
@@ -67,6 +68,30 @@ class EditService(UpdateView):
             cleaned_data,
             calculated_field=self.object.name,
         )
+
+
+class DeleteService(
+        LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ The superuser only can delete a service """
+    model = Service
+    template_name = 'testimonials/delete_services.html'
+    success_message = "Service deleted successfully"
+    success_url = reverse_lazy('services')
+
+    def test_func(self):
+        """ Only superuser can delete service details """
+        if self.request.user.is_superuser:
+            return True
+
+    def delete(self, request, *args, **kwargs):
+        """
+        This function is used to display sucess message given
+        SucessMessageMixin cannot be used in generic.DeleteView.
+        Credit: https://stackoverflow.com/questions/24822509/
+        success-message-in-deleteview-not-shown
+        """
+        messages.success(self.request, self.success_message)
+        return super(DeleteService, self).delete(request, *args, **kwargs)
 
 
 class Testimonials(ListView):

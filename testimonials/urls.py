@@ -8,4 +8,6 @@ urlpatterns = [
     path('testimonials/add/', views.AddService.as_view(), name='add_services'),
     path('testimonials/edit/<int:pk>/', views.EditService.as_view(),
          name='edit_services'),
+    path('testimonials/delete/<int:pk>/', views.DeleteService.as_view(),
+         name='delete_services'),
 ]

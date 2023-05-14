@@ -138,3 +138,26 @@ class EditTestimonial(
         testimonial = self.get_object()
         return testimonial.name == self.request.user\
             or self.request.user.is_superuser
+
+
+class DeleteTestimonial(
+        LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    This view is used to allow logged in users to delete their own testimonials
+    """
+    model = Testimonial
+    template_name = 'testimonials/delete_testimonials.html'
+    success_message = "Testminonial successfully deleted"
+    success_url = reverse_lazy('testimonials')
+
+    def test_func(self):
+        """
+        Prevent another user from deleting another user's testminonial
+        """
+        testimonial = self.get_object()
+        return testimonial.name == self.request.user\
+            or self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteTestimonial, self).delete(request, *args, **kwargs)

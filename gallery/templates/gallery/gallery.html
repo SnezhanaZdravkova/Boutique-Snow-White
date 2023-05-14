@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center pt-4">Boutique Snow White Gallery</h1>
+        </div>
+        {% if user.is_superuser %}
+        <div class="col-12">
+            <div class="pt-3 text-center">
+                <a href="{% url 'add_image' %}" class="btn btn-outline-dark py-2" aria-label="add-picture">
+                    Add Picture
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <br>
+</div>
+{% endblock %}

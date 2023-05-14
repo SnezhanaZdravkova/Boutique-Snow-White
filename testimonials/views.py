@@ -46,6 +46,29 @@ class AddService(
             return True
 
 
+class EditService(UpdateView):
+    """ View to allow superuser to update services """
+    model = Service
+    form_class = ServiceForm
+    template_name = 'testimonials/edit_services.html'
+    success_message = "%(calculated_field)s was edited successfully"
+
+    def test_func(self):
+        """ Only superuser can edit service details """
+        if self.request.user.is_superuser:
+            return True
+
+    def get_success_message(self, cleaned_data):
+        """
+        Override the get_success_message() method to add the service name
+        into the success message.
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.name,
+        )
+
+
 class Testimonials(ListView):
     """ This view is used to display all testimonials """
     model = Testimonial

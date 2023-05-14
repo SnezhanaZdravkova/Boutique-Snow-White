@@ -42,7 +42,7 @@
                     {% if user.is_authenticated and testimonial.name == user or user.is_superuser %}
                     <span class="align-self-end">
                         <small class="edit-delete-btns ">
-                            <a href="">Edit</a> |
+                            <a href="{% url 'edit_testimonials' testimonial.id %}">Edit</a> |
                             <a href="">Delete</a>
                         </small>
                     </span>

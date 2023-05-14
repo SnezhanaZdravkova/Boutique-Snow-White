@@ -122,3 +122,19 @@ class AddTestimonial(
         """
         form.instance.name = self.request.user
         return super().form_valid(form)
+
+
+class EditTestimonial(
+        LoginRequiredMixin, UserPassesTestMixin,
+        SuccessMessageMixin, UpdateView):
+    """ Allow logged in users to edit their own testimonials """
+    model = Testimonial
+    form_class = TestimonialForm
+    template_name = 'testimonials/edit_testimonials.html'
+    success_message = "Testminonial edited successfully"
+
+    def test_func(self):
+        """ Prevent another user from editing user's testminonial """
+        testimonial = self.get_object()
+        return testimonial.name == self.request.user\
+            or self.request.user.is_superuser

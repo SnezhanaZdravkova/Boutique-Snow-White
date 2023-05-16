@@ -11,7 +11,7 @@ class GalleryImages(models.Model):
 
     def get_absolute_url(self):
         """Get url after user adds project image"""
-        return reverse('project_gallery')
+        return reverse('project_images')
 
     def __str__(self):
         return self.service

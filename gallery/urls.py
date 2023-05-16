@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+from .views import ProjectImages, AddImage
 
 
 urlpatterns = [
-    path('', views.ProjectImages.as_view(), name='project_images'),
-    path('gallery', views.AddImage.as_view(), name='add_image'),
+    path('gallery/', ProjectImages.as_view(), name='project_images'),
+    path('add_image/', AddImage.as_view(), name='add_image'),
 ]

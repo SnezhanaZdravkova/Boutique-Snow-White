@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DeleteView, ListView, CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
 from .models import GalleryImages
 from .forms import AddImageForm
 
@@ -24,6 +25,7 @@ class AddImage(
     form_class = AddImageForm
     template_name = 'gallery/add_image.html'
     success_message = "Your image was added successfully"
+    success_url = reverse_lazy('services')
 
     def test_func(self):
         """

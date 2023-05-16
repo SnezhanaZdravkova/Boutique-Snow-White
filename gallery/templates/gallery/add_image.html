@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}Images in the Gallery{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -21,9 +23,9 @@
     <div class="row justify-content-center ">
         <div class="col-11 col-md-8 col-lg-6 mt-3">
             <form method="post" enctype="multipart/form-data">
-                {{ form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-outline-dark rounded-0">Add Image</button>
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-green rounded-0">Add Image</button>
                 <a class="btn btn-outline-dark rounded-0 m-2"
                     href="{%  url 'project_images' %}">Cancel</a>
             </form>

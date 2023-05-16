@@ -11,14 +11,13 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+<!-- Page Title -->      
+<h1 class="text-center p-2 d-block">
+    Contact Us
+</h1>                
+<hr>
+
 <div class="container fluid">
-    <!-- Page Title -->
-    <div class="row">
-        <hr>        
-        <h4 class="logo-font text-black text-center mt-5">Contact Us</h4>                
-        <hr>
-    <div>
-    
     <div class="container mt-5 text-center pb-5">
         <p>Do you have a question, a concern?
             If so, please complete the form below and we will aim to respond within 24 hours.
@@ -32,8 +31,8 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <!--Page Links to Submit Contact Us From or Cancel to Leave page Redirect's Back to Home Page-->
-                <button type="submit" class="btn btn-green rounded-1">Submit</button>
-                <a class="btn btn-green rounded-1" href="{%  url 'home' %}">Cancel</a>
+                <button type="submit" class="btn btn-green rounded-0">Submit</button>
+                <a class="btn btn-green rounded-0" href="{%  url 'home' %}">Cancel</a>
             </form>
         </div>
     </div>

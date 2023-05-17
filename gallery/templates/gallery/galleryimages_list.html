@@ -15,7 +15,7 @@
 {% if user.is_superuser %}
     <div class="col-12 mb-6">
         <div class="pt-3 text-center">
-            <a href="{% url 'add_image' %}" class="btn btn-green rounded-0" aria-label="add-picture">
+            <a href="{% url 'add_image' %}" class="btn btn-green rounded-0 p-2 mb-6" aria-label="add-picture">
                 Add Picture
             </a>
         </div>
@@ -24,13 +24,13 @@
     <br>
 
     {% for image in galleryimages_list %}
-    <a href="" class="recipes" aria-label="Click to view {{image.service.name}}"></a>
+    <a href="{% url 'project_images' %}" class="recipes" aria-label="Click to view {{image.all_pictures.name}}"></a>
     <div class="col-sm-6 col-md-4">
         <div class="card border-0 mx-0 py-lg-3">
         {% if user.is_superuser %}
         <div>
             <span class="x-btn">
-                <a href="" aria-label="Delete Image"><i class="fas fa-times fa-lg"></i></a>
+                <a href="{% url 'delete_image' image.id %}" aria-label="Delete Image"><i class="fas fa-times fa-lg"></i></a>
             </span>
         </div>
         {% endif %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import DeleteView, ListView, CreateView
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
@@ -33,3 +34,22 @@ class AddImage(
         """
         if self.request.user.is_superuser:
             return True
+
+
+class DeleteImage(
+        LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete image view """
+    model = GalleryImages
+    template_name = 'gallery/delete_image.html'
+    success_message = "Image successfully deleted"
+    success_url = reverse_lazy('project_images')
+
+    def test_func(self):
+        """ Only superuser can delete an image """
+        if self.request.user.is_superuser:
+            return True
+    
+    def delete(self, request, *args, **kwargs):
+
+        messages.success(self.request, self.success_message)
+        return super(DeleteImage, self).delete(request, *args, **kwargs)

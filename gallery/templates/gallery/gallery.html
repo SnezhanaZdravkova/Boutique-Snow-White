@@ -28,17 +28,22 @@
     <br>
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for image in project_images %} 
-        <a href="" class="recipes" aria-label="Click to view ">
+        <a href="{{ 'image.image.url' }}" class="product-card" aria-label="Click to view ">
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{ 'image.image.url' }}" class="card-img-top" alt="{{ image.service.name }}">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h2 class="card-title">{{ image.service.name }}</h2>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{% url 'home' %}" class="btn btn-primary w-50">Go home</a>
                 </div>
             </div>
         </a>
         {% endfor %}
+    </div>
+</div>
+<div class="btt-button shadow-sm rounded-0 border-gold">
+    <div class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
     </div>
 </div>
 {% endblock %}

@@ -15,7 +15,7 @@
 {% if user.is_superuser %}
     <div class="col-12 mb-6">
         <div class="pt-3 text-center">
-            <a href="{% url 'add_image' %}" class="btn btn-green rounded-0 p-2 mb-6" aria-label="add-picture">
+            <a href="{% url 'add_image' %}" class="btn btn-green rounded-0 m-4" aria-label="add-picture">
                 Add Picture
             </a>
         </div>
@@ -24,8 +24,7 @@
     <br>
 
     {% for image in galleryimages_list %}
-    <a href="{% url 'project_images' %}" class="recipes" aria-label="Click to view {{image.all_pictures.name}}"></a>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4 m-2">
         <div class="card border-0 mx-0 py-lg-3">
         {% if user.is_superuser %}
         <div>
@@ -34,11 +33,30 @@
             </span>
         </div>
         {% endif %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.service.name }}">
+            <a href="{{ image.image.url }}" target="_blank" class="stretched-link"
+                aria-label="project-image"></a>
+        </div>
         <div class="d-none p-2 my-auto d-lg-block pic-text bg-white appear">
-            <strong>{{ service.name }}</strong>
+            <strong>{{ image.service.name }}</strong>
         </div>
         </div>
     </div>
     {% endfor %}
 </div>
+<div class="btt-button shadow-sm rounded-0 border-gold">
+    <div class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+</script>
 {% endblock %}

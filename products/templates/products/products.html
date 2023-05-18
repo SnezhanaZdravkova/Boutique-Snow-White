@@ -94,8 +94,8 @@
                         </div>
                         {% if request.user.is_superuser %}
                         <small class="col text-right pr-0 edit-delete-btns">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                            <a href="{% url 'delete_product' product.id %}">Delete</a>
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-primary">Edit</a> |
+                            <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
                         </small>
                         {% endif %}
                         <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-0 hover:bg-ti

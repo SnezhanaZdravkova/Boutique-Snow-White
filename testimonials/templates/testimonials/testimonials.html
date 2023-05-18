@@ -42,8 +42,8 @@
                     {% if user.is_authenticated and testimonial.name == user or user.is_superuser %}
                     <span class="align-self-end">
                         <small class="edit-delete-btns ">
-                            <a href="{% url 'edit_testimonials' testimonial.id %}" class="btn btn-outline-dark m-2" aria-label="edit-testimonial">Edit</a> |
-                            <a href="{% url 'delete_testimonials' testimonial.id %}" class="btn btn-outline-dark m-2" aria-label="delete-testimonial">Delete</a>
+                            <a href="{% url 'edit_testimonials' testimonial.id %}" class="btn btn-outline-dark btn-primary m-2 rounded-0" aria-label="edit-testimonial">Edit</a> |
+                            <a href="{% url 'delete_testimonials' testimonial.id %}" class="btn btn-outline-dark btn-danger rounded-0 m-2" aria-label="delete-testimonial">Delete</a>
                         </small>
                     </span>
                     {% endif %}

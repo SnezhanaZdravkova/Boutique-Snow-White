@@ -51,8 +51,8 @@
                                 </div>
                                 {% if request.user.is_superuser %}
                                 <small class="edit-delete-btns align-bottom">
-                                    <a href="{% url 'edit_services' service.id %}" class="btn btn-outline-dark rounded-0" aria-label="edit">Edit</a> |
-                                    <a href="{% url 'delete_services' service.id %}" class="btn btn-outline-dark rounded-0" aria-label="delete">Delete</a>
+                                    <a href="{% url 'edit_services' service.id %}" class="btn btn-outline-dark btn-primary rounded-0" aria-label="edit">Edit</a> |
+                                    <a href="{% url 'delete_services' service.id %}" class="btn btn-outline-dark btn-danger rounded-0" aria-label="delete">Delete</a>
                                 </small>
                                 {% else %}
                                 <div class="align-bottom">

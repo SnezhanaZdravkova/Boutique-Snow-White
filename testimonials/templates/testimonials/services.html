@@ -13,12 +13,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Curtains and Blinds Design Services</h1>
+            <h1 class="text-center pt-4">Services We Offer</h1>
         </div>
         {% if user.is_superuser %}
         <div class="col-12">
             <div class="pt-3 text-center">
-                <a href="{% url 'add_services' %}" class="btn btn-outline-dark py-2" aria-label="add-new-service">
+                <a href="{% url 'add_services' %}" class="btn btn-outline-dark btn-green rounded-0 py-2" aria-label="add-new-service">
                     Add New Service
                 </a>
             </div>
@@ -51,12 +51,12 @@
                                 </div>
                                 {% if request.user.is_superuser %}
                                 <small class="edit-delete-btns align-bottom">
-                                    <a href="{% url 'edit_services' service.id %}" class="btn btn-outline-dark rounded-0">Edit</a> |
-                                    <a href="{% url 'delete_services' service.id %}" class="btn btn-outline-dark rounded-0">Delete</a>
+                                    <a href="{% url 'edit_services' service.id %}" class="btn btn-outline-dark rounded-0" aria-label="edit">Edit</a> |
+                                    <a href="{% url 'delete_services' service.id %}" class="btn btn-outline-dark rounded-0" aria-label="delete">Delete</a>
                                 </small>
                                 {% else %}
                                 <div class="align-bottom">
-                                    <a href="{% url 'contact' %}" class="btn btn-outline-dark rounded-0">Enquire Now</a>
+                                    <a href="{% url 'contact' %}" class="btn btn-outline-dark btn-green rounded-0" aria-label="Enquire now">Enquire Now</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -73,4 +73,13 @@
         <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+	$('.btt-link').click(function(e) {
+		window.scrollTo(0,0)
+	})
+</script>
 {% endblock %}

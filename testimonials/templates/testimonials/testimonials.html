@@ -17,7 +17,7 @@
         </div>
         <div class="col-12">
             <div class="pt-3 text-center">
-                <a href="{% url 'add_testimonial' %}" class="btn btn-outline-dark py-2" aria-label="add-testimonial">
+                <a href="{% url 'add_testimonial' %}" class="btn btn-green btn-outline-dark rounded-0 py-2" aria-label="add-testimonial">
                     Add Testimonial
                 </a>
             </div>
@@ -58,4 +58,13 @@
         <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+	$('.btt-link').click(function(e) {
+		window.scrollTo(0,0)
+	})
+</script>
 {% endblock %}

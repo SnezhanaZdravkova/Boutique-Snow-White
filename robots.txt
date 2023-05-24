@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /products/
+Disallow: /testimonials/
+Sitemap: https://boutique-snow-white.herokuapp.com/sitemap.xml

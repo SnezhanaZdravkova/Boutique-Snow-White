@@ -57,6 +57,7 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 
 ## Balsamiq Wireframes
 Wireframes are extremely basic and did not incorporate all App pages. Wireframes were used as boiler plates to start the app design many updates and alterations have been made after the basic Wireframes were used to get started on the App.
+- ![home page](../../media/readme/home-page-sw-2.jpg)
 - ![all products image](../../media/readme/all-products-sw_10.png)
 
 ## Bugs and Issues

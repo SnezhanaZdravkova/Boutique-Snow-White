@@ -55,6 +55,10 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 > As a User I can easily navigate through the site so that I can view desired content
 > As a User I can see the most loved producs so that I can quickly find inspiration and see which product is most famous
 
+## Balsamiq Wireframes
+Wireframes are extremely basic and did not incorporate all App pages. Wireframes were used as boiler plates to start the app design many updates and alterations have been made after the basic Wireframes were used to get started on the App.
+- ![all products image](../../media/readme/all-products-sw_10.png)
+
 ## Bugs and Issues
 
 ## Deployment - Heroku
@@ -237,4 +241,4 @@ The site is now live and operational.
 - Many thanks to my mentor Ronan for his support and advice
 - Thanks to The Code Institute slack community
 - Thanks to my colleague Tara Helberg for helping and inspiring
-- Thanks AliOKeeffe for helping me with my README.MD file
+- Thanks AliOKeeffe for helping and inspiring me!

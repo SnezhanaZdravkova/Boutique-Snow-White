@@ -3,12 +3,12 @@ html {
 }
 body {
     background-color: bisque;
-    height: calc(100vh - 164px);
+    height: auto;
     color: #555;
     font-family: 'Lato', sans-serif;
 }
 .home-content {
-    min-height: calc(100vh - 328px);
+    min-height: 70%;
 }
 .btn-green {
     background: #A99166;

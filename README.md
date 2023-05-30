@@ -2,10 +2,17 @@
 
 
 # [WELCOME TO BOUTIQUE SNOW WHITE SITE](https://boutique-snow-white.herokuapp.com/)
-This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website, that allows users to view, select and buy products. This project has been built for educational purposes.
+This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website, that allows users to view, select and buy products.
+The site's objective is to allow users to browse/view or buy products weather they are a Registered user or not. 
+This project has been built for educational purposes.
 GitHub name repository [here](https://github.com/SnezhanaZdravkova/Boutique-Snow-White)
 
-## User Experience
+# Contents
+
+- [User Experience(UX)](#user-experience-ux)
+- [Languages](#languages)
+
+## User Experience (UX)
 
 ## User Stories
 ## User Profile
@@ -57,8 +64,21 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 
 ## Balsamiq Wireframes
 Wireframes are extremely basic and did not incorporate all App pages. Wireframes were used as boiler plates to start the app design many updates and alterations have been made after the basic Wireframes were used to get started on the App.
-- ![home page](../Boutique-Snow-White/media/readme-images/home-page-sw-2.jpg)
-- ![all products image](../Boutique-Snow-White/media/readme-images/all-products-sw_10.png)
+<details><summary>Balsamiq Wireframes</summary>
+
+Home Page ![home page](../Boutique-Snow-White/media/readme-images/home-page-sw-2.jpg)
+
+All Products ![all products image](../Boutique-Snow-White/media/readme-images/all-products-sw_10.png)
+
+Services ![Servises](../Boutique-Snow-White/media/readme-images/services-page-2.jpg)
+
+Testimonials ![Testimonials](../Boutique-Snow-White/media/readme-images/testimonials-2.jpg)
+
+Contact Us Form ![Contact Us Form](../Boutique-Snow-White/media/readme-images/contact-form-1.jpg)
+
+Mobile Phone ![Mobile Phone](../Boutique-Snow-White/media/readme-images/mobile-sw-2.jpg)
+
+</details>
 
 ## Bugs and Issues
 

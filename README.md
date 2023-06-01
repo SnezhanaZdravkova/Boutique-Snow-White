@@ -49,6 +49,10 @@ GitHub name repository [here](https://github.com/SnezhanaZdravkova/Boutique-Snow
 * As a/an Store Owner I want to be able to edit/delete services so that I can update or remove service if it no longer practice.
 * As a/an Store Owner I want to be able to remove testimonial so that I can when we a no longer providing the services they are about.
 * As a/an Store Owner I want to be able to add project images so that I can so users can see our previous work or products.
+### Epic 6 - User Interaction
+* As a Site User I can submit an enquiry form so that I can enquire about a design consultation.
+* As a Site User I can add / edit / delete a testimonial in relation to a consultation I received so that I can give my feedback.
+* As a Site User I can sign up for the website's newsletter so that I can keep up to date with new products and promotions.
 
 ## Data Model
 - I used principles of Object-Oriented Programming throughout this project and Django's Class-Based Generic Views.

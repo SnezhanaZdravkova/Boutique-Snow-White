@@ -2,37 +2,60 @@
 
 
 # [WELCOME TO BOUTIQUE SNOW WHITE SITE](https://boutique-snow-white.herokuapp.com/)
-This is a full-stack framework project built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website, that allows users to view, select and buy products.
-The site's objective is to allow users to browse/view or buy products weather they are a Registered user or not. 
-This project has been built for educational purposes.
+This is a full-stack framework project, B2C e-commerce store, built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website, that allows users to view, select and buy products.
+The site's objective is to allow users to browse/view or buy products weather they are a Registered user or not.
+The payment system uses Stripe. This project has been built for educational purposes.
 GitHub name repository [here](https://github.com/SnezhanaZdravkova/Boutique-Snow-White)
 
-# Contents
+<!-- # Contents
 
 - [User Experience(UX)](#user-experience-ux)
-- [Languages](#languages)
+- [Languages](#languages) -->
 
-## User Experience (UX)
+# User Experience (UX)
+- A visitor to Boutique Snow White would be someone who is most likely an adult who is interested in buying Fashion products and high-end interior or Trendy Clothing design services.
 
 ## User Stories
-## User Profile
-> As a Site User, I can register an account.
-> As a Site User, I can log in or log out of my account so that I can keep my account secure.
-> As a Site User, I can see my login status so that I know if I'm logged in or out.
-## Login/Register
-> As a Site User, I can register for an account so that I can interact with the site content
-> As a Site User, I can log in/out off my account if I wish so that I can connect or disconnect from the website
-> As a Site User, I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
-> As a Site User, I can click on a product so that I can read the full description, and view the price and rating.
-> As a Site User, I can view my shopping bag so that I can see and manage all the products I have selected in the one location
-## Site Administration
-> As a Site Administrator, I can create, read, update and delete products so that I can manage the app content.
+### Epic 1 - Viewing and Navigation
+* As a/an Shopper I want to be able to view a list of products so that I can select some to purchase.
+* As a/an Shopper I want to be able to view individual product details so that I can identify the price, description, product rating, product image and available sizes.
+* As a/an Shopper I want to be able to quicly identify deals, clearance items and special offers so that I can take advantage of special savings on products I'd like to purchase.
+* As a/an Shopper I want to be able to easily view the total of my purchases at any time so that I can avoid spending too much.
+### Epic 2 - Registration and User Accounts
+* As a/an Site User I want to be able to easily register for an account so that I can have a personal account and be able to view my profile.
+* As a/an Site User I want to be able to easily login and logout so that I can access my personal account information.
+* As a/an Site User I want to be able to easily recover my password in case I forget it so that I can recover access to my account.
+* As a/an Site User I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful.
+* As a/an Site User I want to be able to have a personalized user profile so that I can view my personal order history and order confirmations, and save my payment information.
+### Epic 3 - Sorting and Searching
+* As a/an Shopper I want to be able to sort the list of available products so that I can easily identyfy the best rated, best priced and categorically sorted products.
+* As a/an Shopper I want to be able to sort a specific category of pruducts so that I can find the best-priced or best-rated product in a specific category, or sort the products in that category by name.
+* As a/an Shopper I want to be able to sort multiple categories of products simultaneously so that I can find the best-priced or the best-rated products across broad categories, such as "shirts" or "dresses".
+* As a/an Shopper I want to be able to search for a product by name or description so that I can find a specific product I'd like to purchase.
+* As a/an Shopper I want to be able to easily see what I have searched for and the number of results so that I can quickly deside whether the product I want is available.
+### Epic 4 - Purchasing and Checkout
+* As a/an Shopper I want to be able to Easily select the size and quantity of a product when purchasing it so that I can ensure I don't accidentally select the wrong product quantity or size.
+* As a/an Shopper I want to be able to view items in my bag to be purchased so that I can identify the total cost of my purchas and all items that I will receive.
+* As a/an Shopper I want to be able to adjust the quantity of individual items in my bag so that I can easily make changes to my purchase before checkout.
+* As a/an Shopper I want to be able to easily enter my paiment information so that I can check out quickly and with no hassles.
+* As a/an Shopper I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the needed information to make a purchase.
+* As a/an Shopper I want to be able to view an order confirmation after checkout so that I can veryfy that I haven't make any mistakes.
+* As a/an Shopper I want to be able to receive an email confirmation after checkout so that I can keep the confirmation of what I've purchased for my records.
+### Epic 5 - Admin and Store Management
+* As a/an Store Owner I want to be able to add a product so that I can add new items to my store.
+* As a/an Store Owner I want to be able to edit/update a product so that I can change product prices, descriptions, images, and other product criteria.
+* As a/an Store Owner I want to be able to delete a product so that I can remove items that are no longer for sale.
+* As a/an Store Owner I want to be able to add services so that I can users can see if there is new service.
+* As a/an Store Owner I want to be able to edit/delete services so that I can update or remove service if it no longer practice.
+* As a/an Store Owner I want to be able to remove testimonial so that I can when we a no longer providing the services they are about.
+* As a/an Store Owner I want to be able to add project images so that I can so users can see our previous work or products.
+
 ## Data Model
-> I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views.
+- I used principles of Object-Oriented Programming throughout this project and Django's Class-Based Generic Views.
 
-> Django AllAuth was used for the user authentication system. In order for the users to create recipes a custom recipe model was required. The recipe author is a foreign key to the User model given a recipe can only have one author. The Comment model allows users to comment on individual recipes and the Recipe is a foreign key in the comment model given a comment can only be linked to one recipe.
+-  Django AllAuth was used for the user authentication system.
 
-> The diagram below details the database schema: (to be added)
+-  The diagram below details the database schema: (to be added)
 
 ## User Story Testing
 > Testing Users Stories form (UX) Section
@@ -89,11 +112,11 @@ This project was deployed using Github, Heroku and ElephentSQL.
 To create a new repository I took the following steps:
 
 > Logged into Github.
-> Clicked over to the ‘repositories’ section.
-> Clicked the green ‘new’ button. This takes you to the create new repository page.
-> Once there under ‘repository template’ I chose the code institute template from the dropdown menu.
-> I input a repository name then clicked the green ‘create repository button’ at the bottom of the page.
-> Once created I opened the new repository and clicked the green ‘Gitpod’ button to create a workspace in Gitpod for editing.
+> Clicked over to the 'repositories' section.
+> Clicked the green 'new' button. This takes you to the create new repository page.
+> Once there under 'repository template' I chose the code institute template from the dropdown menu.
+> I input a repository name then clicked the green 'create repository button' at the bottom of the page.
+> Once created I opened the new repository and clicked the green 'Gitpod' button to create a workspace in Gitpod for editing.
 
 ## Create the Heroku App:
 > Log in to Heroku or create an account.
@@ -259,7 +282,7 @@ The site is now live and operational.
 >-  Bootstrap
 
 ## Acknowledgements
-- Many thanks to my mentor Ronan for his support and advice
+- Many thanks to my mentor Ronan McClelland for his support and advice
 - Thanks to The Code Institute slack community
 - Thanks to my colleague Tara Helberg for helping and inspiring
 - Thanks AliOKeeffe for helping and inspiring me!

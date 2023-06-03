@@ -5,7 +5,8 @@
 This is a full-stack framework project, B2C e-commerce store, built using Django, Python, HTML and CSS. My goal is to create a functioning and responsive website, that allows users to view, select and buy products.
 The site's objective is to allow users to browse/view or buy products weather they are a Registered user or not.
 The payment system uses Stripe. This project has been built for educational purposes.
-GitHub name repository [here](https://github.com/SnezhanaZdravkova/Boutique-Snow-White)
+- GitHub name repository [here](https://github.com/SnezhanaZdravkova/Boutique-Snow-White)
+- ![mockup image - amiresponsive](../Boutique-Snow-White/media/readme-images/boutique-snow-white-mockup.jpg)
 
 <!-- # Contents
 

@@ -27,14 +27,14 @@
     </div>
     <br>
     {% for service in service_list%}
-    <div class="row alt-colour">
+    <div class="row bg-colour">
         <div class="container services-inner">
             <div class="col-12 pl-md-4">
                 <div class="card my-5 border-0 bg-transparent">
                     <div class="row no-gutters">
                         <div class="col-12 col-md-5 col-lg-4">
                             {% if service.image %}
-                            <img src="{{ service.image.url }}" class="service-img" alt="{{ service.name }}">
+                            <img src="{{ service.image.url }}" class="service-image" alt="{{ service.name }}">
                             {% else %}
                             <img src="{{ MEDIA_URL }}noimage.png" alt="{{ service.type }}" class="">
                             {% endif %}

@@ -205,6 +205,15 @@ footer{
     height: 2rem;
     margin: 1rem;
 }
+/* Service */
+.bg-color {
+    background-color: #6c614d;
+}
+.service-image {
+    height: 400px;
+    object-fit: cover;
+    width: 300px;
+}
 
 /* -------------------------------- Media Queries */
 

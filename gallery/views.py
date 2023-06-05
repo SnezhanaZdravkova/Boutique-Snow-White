@@ -26,7 +26,7 @@ class AddImage(
     form_class = AddImageForm
     template_name = 'gallery/add_image.html'
     success_message = "Your image was added successfully"
-    success_url = reverse_lazy('services')
+    success_url = reverse_lazy('project_images')
 
     def test_func(self):
         """
@@ -48,7 +48,7 @@ class DeleteImage(
         """ Only superuser can delete an image """
         if self.request.user.is_superuser:
             return True
-    
+
     def delete(self, request, *args, **kwargs):
 
         messages.success(self.request, self.success_message)

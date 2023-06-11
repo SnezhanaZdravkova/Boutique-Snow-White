@@ -43,4 +43,4 @@ class Testimonial(models.Model):
 def create_user_profile(instance, created, **kwargs):
     """Create or update the user profile"""
     if created:
-        Testimonial.objects.create(user=instance)
+        Testimonial.objects.create(name=instance)

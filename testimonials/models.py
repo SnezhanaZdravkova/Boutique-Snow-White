@@ -24,7 +24,7 @@ class Testimonial(models.Model):
     name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="testimonials")
     service = models.ForeignKey(
-        Service, on_delete=models.CASCADE, related_name='testimonial')
+        Service, on_delete=models.CASCADE, related_name='testimonial', null=True, blank=True)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
 

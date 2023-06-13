@@ -171,8 +171,7 @@ input[name='q']::placeholder {
     border: 2px solid #A99166;
 }
 .logo-font {
-    font-size: 1,5rem;
-    line-height: 100px;
+    text-transform: uppercase;
 }
 .invitation {
     font-size: 1.5rem;
@@ -206,9 +205,6 @@ footer{
     margin: 1rem;
 }
 /* Service */
-.bg-color {
-    background-color: #6c614d;
-}
 .service-image {
     height: 400px;
     object-fit: cover;

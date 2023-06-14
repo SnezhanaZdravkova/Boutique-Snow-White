@@ -37,7 +37,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(
-                              request, "You didn't enter any search criteria!")
+                              request, ("You didn't enter any search criteria!"))
                 return redirect(reverse('products'))
             queries = Q(
                        name__icontains=query) | Q(description__icontains=query)
@@ -117,13 +117,13 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
 
-    template = 'products/edit_product.html'
+    # template = 'products/edit_product.html'
     context = {
         'form': form,
         'product': product,
     }
 
-    return render(request, template, context)
+    return render(request, 'products/edit_product.html', context)
 
 
 @login_required

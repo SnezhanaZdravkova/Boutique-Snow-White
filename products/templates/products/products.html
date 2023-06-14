@@ -10,21 +10,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container container-wide">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                {% if current_categories %}
-                {% for c in current_categories %}
-                <h1 class="text-center pt-4">{{ c.friendly_name }}</h1>
-                {% endfor %}
-                {% else %}
+            <div class="col text-center mt-3">
                 <h1 class="text-center pt-4">All Products</h1>
-                {% endif %}
+                {% for c in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <hr class="w-50 mb-1">
             </div>
             {% if user.is_superuser %}
             <div class="col-12">
                 <div class="pt-3 text-center">
-                    <a href="{% url 'add_product' %}" class="btn btn-sm gold-button py-2" aria-label="add-new-product">
+                    <a href="{% url 'add_product' %}" class="btn btn-green rounded-0 py-2" aria-label="add-new-product">
                         Add New Product
                     </a>
                 </div>
@@ -32,83 +32,102 @@
             {% endif %}
         </div>
         <br>
-        <div class="row mb-2">
-            <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                <div class="sort-select-wrapper w-50">
-                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border-gold">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
-                        </option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
-                            (low to high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
-                            (high to low)</option>
-                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
-                            (A-Z)</option>
-                    </select>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
                 </div>
             </div>
-            <div class="col-12 col-md-6 order-md-first">
-                <p class="mt-3 text-center text-md-left">
-                    {{ products|length }} Products{% if search_term %} found for
-                    <strong>"{{ search_term }}"</strong>{% endif %}
-                </p>
-            </div>
-        </div>
-        <div class="row card-deck">
-            {% for product in products  %}
-            <div class="col-sm-6 col-md-4 px-1 d-flex align-items-stretch">
-                <div class="card card-detail product-card border-0 mb-3 mx-auto mx-sm-2">
-                    {% if product.image %}
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="card-img-top">
-                    {% endif %}
-                    <div class="row card-body py-2">
-                        <div class="col pl-0 card-text">
-                            <strong>{{ product.name }}</strong>
-                        </div>
-                        <a href="{% url 'product_detail' product.id %}" class="stretched-link"
-                            aria-label="product-detail"></a>
-                    </div>
-                    <div class="row card-body py-0 mb-4">
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col">
-                                    
-                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                                    {% if product.category %}
-                                    <p class="small mt-1 mb-0">
-                                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                        </a>
-                                    </p>
-                                    {% endif %}
-                                    {% if product.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                    {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                    {% endif %}
-                                    <p class="mt-3">{{ product.description }}</p>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                        {% if product.category %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                        {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            </small>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {% if request.user.is_superuser %}
-                        <small class="col text-right pr-0 edit-delete-btns">
-                            <a href="{% url 'edit_product' product.id %}" class="btn btn-primary">Edit</a> |
-                            <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
-                        </small>
-                        {% endif %}
-                        <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-0 hover:bg-ti
-                        eal-700">Contact Seller</a>
                     </div>
-                </div>
-            </div>
-            {% endfor %}
+                    {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-sm-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:4 %}
+                        <div class="col-12 d-none d-xl-block mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>                
         </div>
     </div>
     <div class="btt-button shadow-sm rounded-0 border border-gold">
         <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>
     </div>
 {% endblock %}

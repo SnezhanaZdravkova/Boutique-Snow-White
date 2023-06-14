@@ -117,13 +117,13 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
 
-    # template = 'products/edit_product.html'
+    template = 'products/edit_product.html'
     context = {
         'form': form,
         'product': product,
     }
 
-    return render(request, 'products/edit_product.html', context)
+    return render(request, template, context)
 
 
 @login_required

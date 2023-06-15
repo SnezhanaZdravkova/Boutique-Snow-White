@@ -14,7 +14,15 @@ The payment system uses Stripe. This project has been built for educational purp
 - [Languages](#languages) -->
 
 # User Experience (UX)
-- A visitor to Boutique Snow White would be someone who is most likely an adult who is interested in buying Fashion products and high-end interior or Trendy Clothing design services.
+## Scope
+> As an App Developer & Designer, I have tried to incorporate the needs of the Shopper & Business Owner/Admin Manager along with a User-Friendly navigation & an aesthetically pleasing App.
+> A visitor to Boutique Snow White would be someone who is most likely an adult who is interested in buying Fashion products and high-end interior or Trendy Clothing design services with an easy to use check out system.
+* Main App Goals
+    + To provide our Shoppers with a good website experience.
+    + To provide our Shoppers with a visually pleasing website that is easy to navigate.
+    + To provide our Shopper with the correct tools allowing shopper to search for products.
+    + To provide our Shopper with an easy and safe way to purchase our products.
+    + To provide our Shoppers with access to mailing list so that they may be informed on our products.
 
 ## User Stories
 ### Epic 1 - Viewing and Navigation
@@ -55,6 +63,33 @@ The payment system uses Stripe. This project has been built for educational purp
 * As a Site User I can add / edit / delete a testimonial in relation to a consultation I received so that I can give my feedback.
 * As a Site User I can sign up for the website's newsletter so that I can keep up to date with new products and promotions.
 
+## User Interaction
+
+- As a logged-in User I can wiew all the categories, products and services
+- As a User I can view the rating on the products so that I can see which product is the most popular
+- As a User I can view the price, description and the image on the product
+- As a User I can celect and buy the products I like
+
+### Login/Register
+
+- As a User I can register for an account so that I can interact with the site content
+- As a User I can log in/out off my account if I wish so that I can connect or disconnect from the website
+- As a User I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+
+## Navigation
+
+- As a User I can easily navigate through the site so that I can view desired content
+- As a User I can see the most loved producs so that I can quickly find inspiration and see which product is most famous
+
+## Agile Method Git Projects
+GitHub projects was used to manage the development process using an agile approach. Please see link to project [Kanban Board](https://github.com/SnezhanaZdravkova/Boutique-Snow-White/projects?query=is%3Aopen)
+
+## Future Features
+- To organize better Newsletter
+- To have a weekly mailing list of Discounts for the Subscribers.
+- To have blog
+- To improve the styling
+
 ## Data Model
 - I used principles of Object-Oriented Programming throughout this project and Django's Class-Based Generic Views.
 
@@ -62,33 +97,148 @@ The payment system uses Stripe. This project has been built for educational purp
 
 -  The diagram below details the database schema: (to be added)
 
-## User Story Testing
-> Testing Users Stories form (UX) Section
+# Web Marketing Strategy
 
-## Superuser / Admin
+Web Marketing Strategy was used in the building of this App using the insights gained as part of the Design Thinking phase, Keyword research, SEO, Xml Sitempap, Robots.txt file, Mail Chimp & Facebook. I have introduced these specific features to aid in the marketing of the Buisness.
 
-> As a site Admin I can create, edit and delete products so that I can manage the site content
-> As a site Admin I can access the admin panel so that I can manage categories and products
-> As a site Admin I can log out of the admin panel so that I can disconnect from the website
-This was tested by accessing the Django Admin Panel. By creating a Superuser we can access the Django Admin Panel where the administrator can perform all the CRUD functionalitis
+## Search Engine Optimisation (SEO)
 
-## User Interaction
+SEO was carried out for this business idea in order to start to understand how most people would find this website app via a search engine. As this is the most common way to find a business online it's good practice to cover SEO to make sure the site is accessible by search engines by finding & useing Keywords.
+The process followed the recommend steps of a general topic brain storm followed by a Brain dump of possible keywords for each general topic and using the google search.
+The Keywords selection was made by tracking what is trending and  looking into what keywords competitors are using.
 
-> As a logged-in User I can wiew all the categories, products and services
-> As a User I can view the rating on the products so that I can see which product is the most popular
-> As a User I can view the price, description and the image on the product
-> As a User I can celect and buy the products I like
+* Keywords
+I used [wordtracker.com](https://www.wordtracker.com/) to pick up the most relevant to my project.
+Giving us a selection of both the Short-Tail Keywords & Long-Tail Keywords that are relevant , will assist the customer in finding our Business online and help with the Websites search ranking.
+Using the information gathered to ensure our meta tags and descriptions have relevant information and keywords as well as using our chosen keywords within the flow of the content of our website.
 
-### Login/Register
+## XML Sitemap
 
-> As a User I can register for an account so that I can interact with the site content
-> As a User I can log in/out off my account if I wish so that I can connect or disconnect from the website
-> As a User I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+The website App also has a sitemap file with a list of important URLs was in order to help the  search engines spiderbots to crawl the business website faster and fetch all relevant content.
 
-## Navigation
+Made by using XML-Sitemaps.com : https://www.xml-sitemaps.com/
 
-> As a User I can easily navigate through the site so that I can view desired content
-> As a User I can see the most loved producs so that I can quickly find inspiration and see which product is most famous
+## Robots 
+
+The use of robots.txt file has been applied to allow search engine spiderbots  where not to go on the website and increase the quality of the site, ultimately improving the SEO rating.
+
+Made with help of Walkthrough Boutique Ado.
+
+## MailChimp Newsletter
+
+MailChimp Newsletter was used to encouraged to Subscription to the Buisness newsletters.
+The signup form is available on the website footer and is present on any page.
+
+## Facebook Page
+
+When it came to social media marketing a Facebook & Instagram where chosen as the start for a social media campagin.
+
+A Facebook page was created in order to Market the Website Buisness online & an Instagram is still pending for development.
+
+Both Social media are accessed from the Footer and are present on all pages of the App.
+
+[Facebook Page](https://www.facebook.com/profile.php?id=100092716042422)
+
+# Security Features and Defensive Design
+
+## User Authentication
+
+Django's Login Required has been used to make sure that any requests to access secure pages by non-authenticated users/Shoppers are redirected. Django's Login Required have been used to limit access based on permissions. Eg: To ensure Admin can only Add/Update/Delete Produts & Services or Logged In Shoppers can Add/Update/Delete Testimonials for which they are the User/Shopper.
+
+## Form Validation
+
+If incorrect or empty information/data is added to a From, the Form won't submit and a warning will appear to the User/Shopper informing them what field raised the error.
+
+## Database Security
+
+The Database URL and secret key are stored in the env.py file to prevent unwanted connections to the Database and this was done at the beginning of the App set up and pushed to GitHub.
+
+Cross-Site Request Forgery (CSRF) Tokens are used on all Forms within the App.
+
+## Custom error pages: 
+
+Custom Error Pages have been created to give the User / Shopper more information and help redirect them when an should an Error occur. These pages are provided with a Redirect Button Return to Shop areas of the App.
+
+## Features
+* Home Page
+* All Products Page
+* Product Detail Page
+* Services Page
+* Testimonials Page
+* Project Images Page
+* Contact Page
+* My Account
+    + Manage Producrs
+    + Profile
+    - Register
+    - Sign in
+    - Sign out
+
+#  Privacy Policy Page
+The Privacy Policy page is very simple and is just a document that shows the Buisness Privacy Policy.
+With in this Policy page we have show who generated out Privacy policy with a link that opens in a new tab.
+We have also supplied the online link to the Business Privacy policy via a link that opens in a new tab.
+
+#  Admin 
+
+## Admin Control Panel Django
+The Admin Control Panel is part of the Django Framework and assists the Admin in Controlling the Content of the App.
+The Control panel welcomes the Admin with options to View Site/Change Password and Logo Out of the Control Panel.
+From this area Admin is able to see & have access to Accounts, Authntication & Authorization, All Apps added to the Site.
+This grants Admin the ability to Add, Edit or Delete from this pannel.
+
+## Admin Login Django
+
+As the Admin a Login Page was required in order to access the Admin Control Panel Area.
+This is part of the Django Framework and supplies a simple form area requesting the Admin Username and Password with a Log In button.
+
+## Admin Control Front End 
+
+In this App we have granted Admin access from the Front end as well.
+
+Admin is able to Add, Edit & Delte Products.
+Admin is able to Login via Account in the Header - However unlike other standard Registered User /Shopper Admin is granted Access to not Only the My Profile and Logout as is Standard.
+The Admin has 2 other Access points from the Account when Logged in Add Product & Add Services.
+The Admin can:
+    - Add, Edit and Delete Products,
+    - Add, Edit  and Delete Services,
+    - Add, Edit  and Delete Testimonials,
+    - Add or Delete Project Images.
+
+# Technologies
+## Languages
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/HTML5)
+- [PYTHON](https://www.python.org/)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+## Support Programs & Libraries
+ Frameworks - Libraries - Programs Used
+ - [Git](https://git-scm.com/)
+    - Version control.
+- [Gitpod](https://www.gitpod.io/)
+    - Used for building and editing my code
+- [Django:](https://www.djangoproject.com/)
+    - Main python framework used in the development of this project
+- [Django-allauth:](https://www.djangoproject.com/)
+    - authentication library used to create the user accounts
+- [ElephentSQL](https://www.elephantsql.com/)
+    - was used as the database for this project
+- [Heroku](https://www.heroku.com/)
+    - was used as the cloud based platform to deploy the site on
+- Chrome Dev Tools - Used for overall development and tweaking, including testing responsiveness and performance
+- Font Awesome - Used for icons
+- GitHub - Used for version control and agile tool
+- [Google Fonts](https://fonts.google.com/)
+    - Used to add style the website's font.
+- W3C - Used for HTML & CSS Validation
+- PEP8 Online - used to validate all the Python code
+- Crispy Forms used to manage Django Forms
+- AWS: the image hosting service used to upload images
+- [Bootstrap 4:](https://getbootstrap.com/)
+    - CSS Framework for developing responsiveness and styling
+
+
+
 
 ## Balsamiq Wireframes
 Wireframes are extremely basic and did not incorporate all App pages. Wireframes were used as boiler plates to start the app design many updates and alterations have been made after the basic Wireframes were used to get started on the App.
@@ -108,7 +258,6 @@ Mobile Phone ![Mobile Phone](../Boutique-Snow-White/media/readme-images/mobile-s
 
 </details>
 
-## Bugs and Issues
 
 ## Deployment - Heroku
 This project was deployed using Github, Heroku and ElephentSQL.
@@ -116,50 +265,50 @@ This project was deployed using Github, Heroku and ElephentSQL.
 ### Github
 To create a new repository I took the following steps:
 
-> Logged into Github.
-> Clicked over to the 'repositories' section.
-> Clicked the green 'new' button. This takes you to the create new repository page.
-> Once there under 'repository template' I chose the code institute template from the dropdown menu.
-> I input a repository name then clicked the green 'create repository button' at the bottom of the page.
-> Once created I opened the new repository and clicked the green 'Gitpod' button to create a workspace in Gitpod for editing.
+- Logged into Github.
+- Clicked over to the 'repositories' section.
+- Clicked the green 'new' button. This takes you to the create new repository page.
+- Once there under 'repository template' I chose the code institute template from the dropdown menu.
+- I input a repository name then clicked the green 'create repository button' at the bottom of the page.
+- Once created I opened the new repository and clicked the green 'Gitpod' button to create a workspace in Gitpod for editing.
 
 ## Create the Heroku App:
-> Log in to Heroku or create an account.
-> On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
-> Enter a unique and meaningful app name.
-> Next select your region.
-> Click on the Create App button.
+- Log in to Heroku or create an account.
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+- Enter a unique and meaningful app name.
+- Next select your region.
+- Click on the Create App button.
 
 ## Attach the ElephentSQL database:
-> Copy the DATABASE_URL located in Config Vars in the Settings Tab.
-> Prepare the environment and settings.py file:
-> In your GitPod workspace, create an env.py file in the main directory.
-> Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
-> Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
-> Comment out the default database configuration.
-> Save files and make migrations.
+- Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+- Prepare the environment and settings.py file:
+- In your GitPod workspace, create an env.py file in the main directory.
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+- Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+- Comment out the default database configuration.
+- Save files and make migrations.
 
-> Link the file to the templates directory in Heroku
-> Change the templates directory to TEMPLATES_DIR
-> Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
-> Create files / directories
-> Create requirements.txt file
-> Create three directories in the main directory; media, storage and templates.
-> Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
-> Update Heroku Config Vars
-> Add the following Config Vars in Heroku: (to be added)
+- Link the file to the templates directory in Heroku
+- Change the templates directory to TEMPLATES_DIR
+- Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
+- Create files / directories
+- Create requirements.txt file
+- Create three directories in the main directory; media, storage and templates.
+- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+- Update Heroku Config Vars
+- Add the following Config Vars in Heroku: (to be added)
 
 # AWS Set Up
 
 ## AWS S3 Bucket
 ### Create an AWS account.
-> From the 'Services' tab on the AWS Management Console, search 'S3' and select it.
-> Click 'Create a new bucket', give it a name(match your Heroku app name if possible), and choose the region closest to you.
-> Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred.
-> Uncheck block all public access and acknowledge that the bucket will be public.
-> Click 'Create bucket'.
-> Open the created bucket, go to the 'Properties' tab. Scroll to the bottom and under 'Static website hosting' click 'edit' and change the Static website hosting option to 'enabled'. Copy the default values for the index and error documents and click 'save changes'.
-> Open the 'Permissions' tab, locate the CORS configuration section and add the following code:
+- From the 'Services' tab on the AWS Management Console, search 'S3' and select it.
+- Click 'Create a new bucket', give it a name(match your Heroku app name if possible), and choose the region closest to you.
+- Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred.
+- Uncheck block all public access and acknowledge that the bucket will be public.
+- Click 'Create bucket'.
+- Open the created bucket, go to the 'Properties' tab. Scroll to the bottom and under 'Static website hosting' click 'edit' and change the Static website hosting option to 'enabled'. Copy the default values for the index and error documents and click 'save changes'.
+- Open the 'Permissions' tab, locate the CORS configuration section and add the following code:
 [
   {
       "AllowedHeaders": [
@@ -174,56 +323,56 @@ To create a new repository I took the following steps:
       "ExposeHeaders": []
   }
 ]
-> In the 'Bucket Policy' section and select 'Policy Generator'.
-> Choose 'S3 Bucket Policy' from the type dropdown.
-> In 'Step 2: Add Statements', add the following settings:
->> Effect: Allow
->> Principal: *
->> Actions: GetObject
->> ARN: Bucket ARN (copy from S3 Bucket page)
->> Click 'Add Statement'.
-> Click 'Generate Policy'.
-> Copy the policy from the popup that appears
-> Paste the generated policy into the Permissions > Bucket Policy area.
-> Add '/*' at the end of the 'Resource' key, and save.
-> Go to the 'Access Control List' section click edit and enable List for Everyone (public access) and accept the warning box.
+- In the 'Bucket Policy' section and select 'Policy Generator'.
+- Choose 'S3 Bucket Policy' from the type dropdown.
+- In 'Step 2: Add Statements', add the following settings:
+    - Effect: Allow
+    - Principal: *
+    - Actions: GetObject
+    - ARN: Bucket ARN (copy from S3 Bucket page)
+    - Click 'Add Statement'.
+- Click 'Generate Policy'.
+- Copy the policy from the popup that appears
+- Paste the generated policy into the Permissions > Bucket Policy area.
+- Add '/*' at the end of the 'Resource' key, and save.
+- Go to the 'Access Control List' section click edit and enable List for Everyone (public access) and accept the warning box.
 
 ## IAM
-> From the 'Services' menu, search IAM and select it.
-> Once on the IAM page, click 'User Groups' from the side bar, then click 'Create group'. Choose a name and click 'Create'.
-> Go to 'Policies', click 'Create New Policy'. Go to the 'JSON' tab and click 'Import Managed Policy'.
-> Search 'S3' and select 'AmazonS3FullAccess'. Click 'Import'.
-> Get the bucket ARN from 'S3 Permissions' as per above.
-> Delete the '*' from the 'Resource' key and add the following code into the area:
+- From the 'Services' menu, search IAM and select it.
+- Once on the IAM page, click 'User Groups' from the side bar, then click 'Create group'. Choose a name and click 'Create'.
+- Go to 'Policies', click 'Create New Policy'. Go to the 'JSON' tab and click 'Import Managed Policy'.
+- Search 'S3' and select 'AmazonS3FullAccess'. Click 'Import'.
+- Get the bucket ARN from 'S3 Permissions' as per above.
+- Delete the '*' from the 'Resource' key and add the following code into the area:
 "Resource": [
     "YOUR-ARN-NO-HERE",
     "YOUR-ARN-NO-HERE/*"
 ]
-> Click 'Next Tags' > 'Next Review' and then provide a name and description and click 'Create Policy'.
-> Click'User Groups' and open the created group. Go to the 'Permissions' tab and click 'Add Permissions' and then 'Attach Policies'.
-> Search for the policy you created and click 'Add Permissions'.
-> You need to create a user to put in the group. Select users from the sidebar and click 'Add user'.
-> Give your user a user name, check 'Programmatic Access'.
-> Click 'Next' and select the group you created.
-> Keep clicking 'Next' until you reach the 'Create user' button and click that.
-> Download the CSV file which contains the AWS_SECRET_ACCESS_KEY and your AWS_ACCESS_KEY_ID needed in the  Heroku variables as per above list and also in your env.py.
+- Click 'Next Tags' > 'Next Review' and then provide a name and description and click 'Create Policy'.
+- Click'User Groups' and open the created group. Go to the 'Permissions' tab and click 'Add Permissions' and then 'Attach Policies'.
+- Search for the policy you created and click 'Add Permissions'.
+- You need to create a user to put in the group. Select users from the sidebar and click 'Add user'.
+- Give your user a user name, check 'Programmatic Access'.
+- Click 'Next' and select the group you created.
+- Keep clicking 'Next' until you reach the 'Create user' button and click that.
+- Download the CSV file which contains the AWS_SECRET_ACCESS_KEY and your AWS_ACCESS_KEY_ID needed in the  Heroku variables as per above list and also in your env.py.
 
 ## Connecting S3 to Django
-> Go back to your IDE and install 2 more requirements:
-- pip3 install boto3
-- pip3 install django-storages
-> Update your requirements.txt file by typing pip3 freeze --local > requirements.txt and add storages to your installed apps.
-> Create an if statement in settings.py
+- Go back to your IDE and install 2 more requirements:
+    - pip3 install boto3
+    - pip3 install django-storages
+- Update your requirements.txt file by typing pip3 freeze --local > requirements.txt and add storages to your installed apps.
+- Create an if statement in settings.py
 if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'insert-your-bucket-name-here'
     AWS_S3_REGION_NAME = 'insert-your-region-here'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-> Then add the line
+- Then add the line
 
 - AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-west-1.amazonaws.com' to tell django where our static files will be coming from in production.
-> Create a file called custom storages and import both our settings from django.con as well as the s3boto3 storage class from django storages.
+- Create a file called custom storages and import both our settings from django.con as well as the s3boto3 storage class from django storages.
 
 - Create the following classes:
 
@@ -232,7 +381,7 @@ class StaticStorage(S3Boto3Storage):
 
 class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
-> In settings.py add the following inside the if statement:
+- In settings.py add the following inside the if statement:
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATICFILES_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
@@ -245,37 +394,19 @@ AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000',
 }
-> Go to S3, go to your bucket and click 'Create folder'. Name the folder 'media' and click 'Save'.
+- Go to S3, go to your bucket and click 'Create folder'. Name the folder 'media' and click 'Save'.
 - Inside the folder, click 'Upload', 'Add files', and then select all the images that you are using for your site.
 - Then under 'Permissions' select the option 'Grant public-read access' and click upload.
 Your static files and media files should be automatically linked from django to your S3 bucket.
 
 ## Deploy
-> NB: Ensure in Django settings, DEBUG is False
-> Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
-> Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
-> Click View to view the deployed site.
+- NB: Ensure in Django settings, DEBUG is False
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
+- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+- Click View to view the deployed site.
 The site is now live and operational.
 
-## Languages
-- HTML
-- CSS
-- PYTHON
-- JavaScript
-- Frameworks - Libraries - Programs Used
-- Django: Main python framework used in the development of this project
-- Django-allauth: authentication library used to create the user accounts
-- ElephentSQL was used as the database for this project
-- Heroku - was used as the cloud based platform to deploy the site on
-- Chrome Dev Tools - Used for overall development and tweaking, including testing responsiveness and performance
-- Font Awesome - Used for icons
-- GitHub - Used for version control and agile tool
-- Google Fonts - Used to import and alter fonts on the page
-- W3C - Used for HTML & CSS Validation
-- PEP8 Online - used to validate all the Python code
-- Crispy Forms used to manage Django Forms
-- AWS: the image hosting service used to upload images
-- Bootstrap 4: CSS Framework for developing responsiveness and styling
+
 
 ## Credits
 >-  Code Institute - 'Boutique Ado' project helped me with product details page and pagination

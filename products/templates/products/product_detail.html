@@ -1,7 +1,8 @@
+<!-- Product Detail Page -->
 {% extends "base.html" %}
 {% load static %}
 
-
+<!-- Page header block to pushing down below Delivery Banner & Navigation -->
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -13,12 +14,14 @@
 {% endblock %}
 
 {% block content %}
+<!-- Product with Full details, Review & Add to Cart -->
 <div class="text-center justify-content-center">
     <h3 class="mb-3 mt-3 pl-4 font-semibold text-black">Product Details</h3>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <!--Product Image-->
             <div class="image-container my-5">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
@@ -31,6 +34,7 @@
                 {% endif %}
             </div>
         </div>
+        <!-- Product Details & Add to Cart -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
@@ -90,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Keep Shopping and Add to Cart buttons -->
                         <div class="col{% if s %}-12 mt-2{% endif %}">
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                 <span class="icon">

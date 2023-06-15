@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Used Code from Code Institute Boutique Ado - follow along project slightly modified -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,10 +11,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid p-2">
         <div class="row">
             <div class="col text-center mt-3">
+                <!--Page Title-->
                 <h1 class="text-center pt-4">All Products</h1>
+                <!-- Display the Category User is In  -->
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
@@ -21,6 +24,7 @@
                 {% endfor %}
                 <hr class="w-50 mb-1">
             </div>
+
             {% if user.is_superuser %}
             <div class="col-12">
                 <div class="pt-3 text-center">
@@ -32,6 +36,7 @@
             {% endif %}
         </div>
         <br>
+        <!-- Sort Functinality Code Credit :Code Institute Boutique Ado walkthrough Project -->
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
@@ -58,6 +63,7 @@
                     </p>
                 </div>
             </div>
+            <!-- Products Card with Image,Product Name -->
             <div class="row">
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -71,9 +77,11 @@
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                             </a>
                             {% endif %}
+                            <!-- Product Name -->
                             <div class="card-body pb-0">
                                 <p class="mb-0">{{ product.name }}</p>
                             </div>
+                            <!-- Product Price & Category -->
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
@@ -90,6 +98,7 @@
                                         {% else %}
                                             <small class="text-muted">No Rating</small>
                                         {% endif %}
+                                        <!-- Product Buttons: Edit & Delete -->
                                         {% if request.user.is_superuser %}
                                             <small class="ml-3">
                                                 <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -101,6 +110,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Pagination -->
                     {% if forloop.counter|divisibleby:1 %}
                         <div class="col-12 d-sm-none mb-5">
                             <hr>
@@ -125,6 +135,7 @@
             </div>                
         </div>
     </div>
+    <!-- Scroll to Top Button -->
     <div class="btt-button shadow-sm rounded-0 border border-gold">
         <a class="btt-link d-flex h-100">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>

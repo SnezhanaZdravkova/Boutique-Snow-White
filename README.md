@@ -213,30 +213,77 @@ The Admin can:
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 ## Support Programs & Libraries
  Frameworks - Libraries - Programs Used
- - [Git](https://git-scm.com/)
+ - [Git:](https://git-scm.com/)
     - Version control.
-- [Gitpod](https://www.gitpod.io/)
+- [GitHub](https://github.com/)
+    - For storing code and deploying the site.
+- [Gitpod:](https://www.gitpod.io/)
     - Used for building and editing my code
 - [Django:](https://www.djangoproject.com/)
     - Main python framework used in the development of this project
 - [Django-allauth:](https://www.djangoproject.com/)
     - authentication library used to create the user accounts
-- [ElephentSQL](https://www.elephantsql.com/)
+- [ElephentSQL:](https://www.elephantsql.com/)
     - was used as the database for this project
-- [Heroku](https://www.heroku.com/)
+- [Heroku:](https://www.heroku.com/)
     - was used as the cloud based platform to deploy the site on
-- Chrome Dev Tools - Used for overall development and tweaking, including testing responsiveness and performance
-- Font Awesome - Used for icons
+- Chrome Dev Tools:
+    - Used for overall development and tweaking, including testing responsiveness and performance
+- [Font Awesome:](https://fontawesome.com/) 
+    - Used for icons
 - GitHub - Used for version control and agile tool
 - [Google Fonts](https://fonts.google.com/)
     - Used to add style the website's font.
-- W3C - Used for HTML & CSS Validation
-- PEP8 Online - used to validate all the Python code
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate CSS code.
+- [W3C Markup Validation Service](https://validator.w3.org/)
+    - Used to validate HTML code.
+- [JSHint](https://jshint.com/)
+    - Used to validate JS code.
+- [Pep8ci](https://pep8ci.herokuapp.com/) - Thank you Code Institute
+    - Used to validate Python code found on slack #announcements
 - Crispy Forms used to manage Django Forms
-- AWS: the image hosting service used to upload images
+- [Amazon AWS](https://aws.amazon.com/)
+    - the image hosting service used to upload images
 - [Bootstrap 4:](https://getbootstrap.com/)
     - CSS Framework for developing responsiveness and styling
+- [Image Resizer](https://imageresizer.com/)
+    - Used to Compress & Resize Images
 
+# Testing
+- Testing During development of the App was done through the project in order to Test for Bugs,
+- Manual Testing was constantly done on all aspects of the App,
+- Constant testing was done for the Responsiveness of the app via Dev Tools.
+- Keeping an eye on the Look and Feel of the App.
+
+## Bugs
+As a new Django Developer Debug was kept on True in order to make use of Django's error page.
+
+A selection of Error's encountered.
+
+<details><summary>Bugs/Errors </summary>
+
+1. Movind to Codeanywhere IDE was quite complicated:
+    - For me was long process - 6 days with tutor support.
+2. A few times noe able to push:
+    - the system bugs.
+3. The Image on Home Page was not Showing:
+    -Error fixed - found typo in the name of the file.
+4. Edit functionality for project:
+    - Error was: TemplateDoesNotExist
+    - Error fixed - found I was using edit_proguct instead edit_product.
+5. Folder Testimonials deleted by mistake.
+6. Quality of Balsamiq Wireframes is poor, and some of the images have been replaced recently:
+    - Codeanywhere IDE allowed uploading files only up to 1mb
+</details>
+
+## Manual Testing
+
+Manual Testing of All Epics / User stories was carried out throught the Developemnt of this App.
+
+Header, Main Navigation & Fotter are shown on all pages throught the App.
+
+Please also note that in Features images have been put in showing a number of manual Testing eg: Toast Pop Ups, Verification request & Sending & Receiving Confirmation emails working etc.
 
 
 
